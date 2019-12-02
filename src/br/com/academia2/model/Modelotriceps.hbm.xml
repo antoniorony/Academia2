@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/07/2019 12:01:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.com.academia2.model.Modelotriceps" table="modelotriceps" catalog="academia2" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="idtriceps" type="int">
+            <column name="idtriceps" not-null="true" />
+        </property>
+        <property name="divt" type="string">
+            <column name="divt" length="60" not-null="true" />
+        </property>
+        <property name="serie" type="int">
+            <column name="serie" not-null="true" />
+        </property>
+        <property name="rept" type="int">
+            <column name="rept" not-null="true" />
+        </property>
+        <property name="carga" type="int">
+            <column name="carga" not-null="true" />
+        </property>
+        <property name="intponto" type="int">
+            <column name="intponto" not-null="true" />
+        </property>
+        <property name="cadencia" type="string">
+            <column name="cadencia" length="60" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

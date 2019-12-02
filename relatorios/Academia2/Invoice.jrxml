@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YWNhZGVtaWEyLm1lbnNhbGlkYWRlIEFTICwzMywxNSwyYjEwM2I0NS01NDg3LTQ2NDItOWU0ZS03
+OGJiOGNlNzNlNTE7YWNhZGVtaWEyLmNsaWVudGUgQVMgLDE4NSwxMyxiMTVmMWJhOS04NzYyLTRk
+MzgtOTExMy1hNjRlMTk3MmNkOGI7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="academia2"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#EEEFF0"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#D8D8D8"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{janeriro},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{janeriro},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{fevereiro},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{fevereiro},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style3">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{marco},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{marco},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style4">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{abril},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{abril},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style5">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{maio},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{maio},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style6">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{junho},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{junho},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style7">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{julho},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{julho},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style8">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{agosto},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{agosto},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{setembro},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{setembro},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style10">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{outubro},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{outubro},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style11">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{novembro},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{novembro},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style12">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{dezembro},"pago")]]></conditionExpression>
+			<style forecolor="#058222"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[EQUALS($F{dezembro},null)]]></conditionExpression>
+			<style forecolor="#FF0400"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT academia2.mensalidade.id,
+	academia2.mensalidade.`idCliente`,
+	academia2.mensalidade.`dataInicio`,
+	academia2.mensalidade.valor,
+	academia2.mensalidade.ano,
+	academia2.mensalidade.janeriro,
+	academia2.mensalidade.fevereiro,
+	academia2.mensalidade.marco,
+	academia2.mensalidade.abril,
+	academia2.mensalidade.maio,
+	academia2.mensalidade.junho,
+	academia2.mensalidade.julho,
+	academia2.mensalidade.agosto,
+	academia2.mensalidade.setembro,
+	academia2.mensalidade.outubro,
+	academia2.mensalidade.novembro,
+	academia2.mensalidade.dezembro,
+	academia2.mensalidade.`valorDebito`,
+	academia2.mensalidade.`valorPago`,
+	academia2.mensalidade.`diaPagamento`,
+	academia2.mensalidade.`dataTermino`,
+	academia2.cliente.id,
+	academia2.cliente.nome
+FROM academia2.mensalidade
+	INNER JOIN academia2.cliente ON 
+	 academia2.cliente.id = academia2.mensalidade.`idCliente`]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="idCliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idCliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="dataInicio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dataInicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="valor" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="valor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="ano" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ano"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="janeriro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="janeriro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="fevereiro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fevereiro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="marco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="marco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="abril" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="abril"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="maio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="maio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="junho" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="junho"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="julho" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="julho"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="agosto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="agosto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="setembro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="setembro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="outubro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="outubro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="novembro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="novembro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="dezembro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dezembro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="valorDebito" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="valorDebito"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="valorPago" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="valorPago"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="diaPagamento" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="diaPagamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="dataTermino" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dataTermino"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="mensalidade"/>
+	</field>
+	<field name="COLUMN_22" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<variable name="nome1" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Count">
+		<variableExpression><![CDATA[$F{nome}]]></variableExpression>
+	</variable>
+	<variable name="dataInicio1" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Count">
+		<variableExpression><![CDATA[$F{dataInicio}]]></variableExpression>
+	</variable>
+	<variable name="janeriro1" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Count">
+		<variableExpression><![CDATA[$F{janeriro}]]></variableExpression>
+	</variable>
+	<variable name="fevereiro1" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Count">
+		<variableExpression><![CDATA[$F{fevereiro}]]></variableExpression>
+	</variable>
+	<variable name="marco1" class="java.lang.Integer" resetType="Group" resetGroup="Gruppo1" calculation="Count">
+		<variableExpression><![CDATA[$F{marco}]]></variableExpression>
+	</variable>
+	<group name="Gruppo1">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupHeader>
+			<band height="218">
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="-1" y="10" width="41" height="20" forecolor="#000000" uuid="7704da8a-15f5-49a1-9c4c-5fa682bd4652"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="40" y="10" width="479" height="20" uuid="d8476b4e-2151-446d-8535-220d9d044674"/>
+					<textFieldExpression><![CDATA[$F{idCliente}+" - "+$F{nome}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="30" width="519" height="20" uuid="c34f6256-c9df-4d24-b704-871e84c4521b"/>
+					<textFieldExpression><![CDATA["Data de Inicio: "+$F{dataInicio}+" | Valor da Mensalidade: "+$F{valor}+" | Dia de Pagamento: "+$F{diaPagamento}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="50" width="128" height="20" uuid="0e8c3d6a-ea60-4301-85f8-b4761f15dffb"/>
+					<text><![CDATA[MENSALIDADES:]]></text>
+				</staticText>
+				<textField>
+					<reportElement key="" style="Style1" x="0" y="70" width="100" height="20" uuid="aa99b70c-c084-4d57-baed-7113061e720f"/>
+					<textFieldExpression><![CDATA["Janeiro: "+$F{janeriro}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style2" x="160" y="70" width="100" height="20" uuid="816d03f0-b6be-4f5a-9f65-dad9251a8cf2"/>
+					<textFieldExpression><![CDATA["Fevereiro: "+$F{fevereiro}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style3" x="330" y="70" width="100" height="20" uuid="5fd38639-71ee-4b20-ae0b-3c0ba4b30f37"/>
+					<textFieldExpression><![CDATA["Março"+$F{marco}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style4" x="454" y="70" width="100" height="20" uuid="0534cf26-3b25-4bc0-9062-646a20327fa4"/>
+					<textFieldExpression><![CDATA["Abril: "+$F{abril}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style5" x="0" y="100" width="100" height="20" uuid="cedb2d82-49ac-427b-9bd8-bd8acb9b1bf0"/>
+					<textFieldExpression><![CDATA["Maio: "+$F{maio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style6" x="160" y="100" width="100" height="20" uuid="0998b621-7e4e-444a-b409-726bd1a84a3a"/>
+					<textFieldExpression><![CDATA["Junho: "+$F{junho}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style7" x="330" y="100" width="100" height="20" uuid="cf62eb49-13c1-4426-b7ee-3020df8ce451"/>
+					<textFieldExpression><![CDATA["Julho: "+$F{julho}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style8" x="454" y="100" width="100" height="20" uuid="6b7153bb-892e-479d-a032-5949a2e93e71"/>
+					<textFieldExpression><![CDATA["Agosto: "+$F{agosto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style9" x="1" y="131" width="100" height="20" uuid="6b351f65-2492-4922-b6d0-996bd13b4b4e"/>
+					<textFieldExpression><![CDATA["Setembro: "+$F{setembro}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style10" x="160" y="132" width="100" height="20" uuid="c5173555-80d9-483f-8deb-54bce43693d6"/>
+					<textFieldExpression><![CDATA["Outubro: "+$F{outubro}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style11" x="330" y="131" width="100" height="20" uuid="4fb568ff-f0d2-4ed9-88c7-fc7183ccea3a"/>
+					<textFieldExpression><![CDATA["Novembro: "+$F{novembro}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style12" x="454" y="132" width="100" height="20" uuid="b7f09e64-0f12-4f78-82f0-80ef2804e0b4"/>
+					<textFieldExpression><![CDATA["Dezembro: "+$F{dezembro}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band>
+				<property name="local_mesure_unitheight" value="pixel"/>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="idCliente">
+		<groupExpression><![CDATA[$F{idCliente}]]></groupExpression>
+	</group>
+	<group name="dataInicio">
+		<groupExpression><![CDATA[$F{dataInicio}]]></groupExpression>
+	</group>
+	<group name="valor">
+		<groupExpression><![CDATA[$F{valor}]]></groupExpression>
+	</group>
+	<group name="ano">
+		<groupExpression><![CDATA[$F{ano}]]></groupExpression>
+	</group>
+	<group name="janeriro">
+		<groupExpression><![CDATA[$F{janeriro}]]></groupExpression>
+	</group>
+	<group name="fevereiro">
+		<groupExpression><![CDATA[$F{fevereiro}]]></groupExpression>
+	</group>
+	<group name="marco">
+		<groupExpression><![CDATA[$F{marco}]]></groupExpression>
+	</group>
+	<group name="abril">
+		<groupExpression><![CDATA[$F{abril}]]></groupExpression>
+	</group>
+	<group name="maio">
+		<groupExpression><![CDATA[$F{maio}]]></groupExpression>
+	</group>
+	<group name="junho">
+		<groupExpression><![CDATA[$F{junho}]]></groupExpression>
+	</group>
+	<group name="julho">
+		<groupExpression><![CDATA[$F{julho}]]></groupExpression>
+	</group>
+	<group name="agosto">
+		<groupExpression><![CDATA[$F{agosto}]]></groupExpression>
+	</group>
+	<group name="setembro">
+		<groupExpression><![CDATA[$F{setembro}]]></groupExpression>
+	</group>
+	<group name="outubro">
+		<groupExpression><![CDATA[$F{outubro}]]></groupExpression>
+	</group>
+	<group name="novembro">
+		<groupExpression><![CDATA[$F{novembro}]]></groupExpression>
+	</group>
+	<group name="dezembro">
+		<groupExpression><![CDATA[$F{dezembro}]]></groupExpression>
+	</group>
+	<group name="valorDebito">
+		<groupExpression><![CDATA[$F{valorDebito}]]></groupExpression>
+	</group>
+	<group name="valorPago">
+		<groupExpression><![CDATA[$F{valorPago}]]></groupExpression>
+	</group>
+	<group name="diaPagamento">
+		<groupExpression><![CDATA[$F{diaPagamento}]]></groupExpression>
+	</group>
+	<group name="dataTermino">
+		<groupExpression><![CDATA[$F{dataTermino}]]></groupExpression>
+	</group>
+	<group name="COLUMN_22">
+		<groupExpression><![CDATA[$F{COLUMN_22}]]></groupExpression>
+	</group>
+	<group name="nome">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+	</group>
+	<title>
+		<band height="196" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="90" width="84" height="25" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill to:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="115" width="120" height="15" uuid="33274f5d-5b7e-4be2-a2ff-65d452a618ed"/>
+				<text><![CDATA[ABC Company]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="80" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="130" width="120" height="15" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca"/>
+				<text><![CDATA[Company Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="145" width="120" height="15" uuid="235bf8b6-1e1e-49c7-b59f-7a46c30b8209"/>
+				<text><![CDATA[Company state1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="160" width="120" height="15" uuid="665f25c2-8663-4951-b699-1ab863bdeb76"/>
+				<text><![CDATA[Company state 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="145" width="120" height="15" uuid="b62092ec-9053-4f27-b387-9b25d2909a68"/>
+				<text><![CDATA[Ship state1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="115" width="120" height="15" uuid="edbd74ac-0cbd-44c9-8a8e-ccf745191172"/>
+				<text><![CDATA[Ship name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="90" width="84" height="25" uuid="139ebe8d-25b0-411e-986c-270015400874">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ship to:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="160" width="120" height="15" uuid="dd52166a-1135-4931-adef-51e7972118bc"/>
+				<text><![CDATA[Ship state 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="130" width="120" height="15" uuid="2d2f365d-7b12-4a8f-990d-ff528a2660bc"/>
+				<text><![CDATA[Ship Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="10" width="50" height="20" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="465" y="10" width="84" height="20" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="65" height="60" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
+				<imageExpression><![CDATA["invoice_logo.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="465" y="30" width="84" height="20" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b"/>
+				<textFieldExpression><![CDATA["INV0001"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="415" y="30" width="50" height="20" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Invoice #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="210" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Your company name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="55" width="205" height="15" uuid="b8cc42fd-b569-497d-834d-7e854040ad18"/>
+				<text><![CDATA[Phone number, web address, ecc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="25" width="205" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
+				<text><![CDATA[Street address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="40" width="205" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
+				<text><![CDATA[City, street, ZIP code]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20"/>
+	</columnHeader>
+	<detail>
+		<band height="20"/>
+	</detail>
+	<lastPageFooter>
+		<band height="177">
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="30" width="261" height="101" uuid="1a0d7088-5af7-4865-8be1-41ec5f51fb36"/>
+				<box>
+					<topPen lineWidth="1.1" lineStyle="Dashed"/>
+					<leftPen lineWidth="1.1" lineStyle="Dashed"/>
+					<bottomPen lineWidth="1.1" lineStyle="Dashed"/>
+					<rightPen lineWidth="1.1" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[Your notes here]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="147" width="556" height="30" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[THANKYOU FOR YOUR BUSINESS]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

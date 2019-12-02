@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/07/2019 12:01:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.com.academia2.model.Mensalidade" table="mensalidade" catalog="academia2" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="idCliente" type="int">
+            <column name="idCliente" not-null="true" />
+        </property>
+        <property name="dataInicio" type="string">
+            <column name="dataInicio" length="10" not-null="false" />
+        </property>
+        <property name="valor" type="float">
+            <column name="valor" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="ano" type="string">
+            <column name="ano" length="4" not-null="true" />
+        </property>
+        <property name="janeriro" type="string">
+            <column name="janeriro" length="10" not-null="false" />
+        </property>
+        <property name="fevereiro" type="string">
+            <column name="fevereiro" length="10" not-null="false" />
+        </property>
+        <property name="marco" type="string">
+            <column name="marco" length="10" not-null="false" />
+        </property>
+        <property name="abril" type="string">
+            <column name="abril" length="10" not-null="false" />
+        </property>
+        <property name="maio" type="string">
+            <column name="maio" length="10" not-null="false" />
+        </property>
+        <property name="junho" type="string">
+            <column name="junho" length="10" not-null="false" />
+        </property>
+        <property name="julho" type="string">
+            <column name="julho" length="10" not-null="false" />
+        </property>
+        <property name="agosto" type="string">
+            <column name="agosto" length="10" not-null="false" />
+        </property>
+        <property name="setembro" type="string">
+            <column name="setembro" length="10" not-null="false" />
+        </property>
+        <property name="outubro" type="string">
+            <column name="outubro" length="10" not-null="false" />
+        </property>
+        <property name="novembro" type="string">
+            <column name="novembro" length="10" not-null="false" />
+        </property>
+        <property name="dezembro" type="string">
+            <column name="dezembro" length="10" not-null="false" />
+        </property>
+        <property name="valorDebito" type="float">
+            <column name="valorDebito" precision="12" scale="0" not-null="false" />
+        </property>
+        <property name="valorPago" type="float">
+            <column name="valorPago" precision="12" scale="0" not-null="false" />
+        </property>
+        <property name="diaPagamento" type="int">
+            <column name="diaPagamento" not-null="false" />
+        </property>
+        <property name="dataTermino" type="string">
+            <column name="dataTermino" length="10" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>
